@@ -46,6 +46,8 @@ if (verdict.wake) await resumeAgent(); // your full LLM turn
 
 You get back `{ wake, reason, probability?, skipped, error? }`, where `probability` is Jev's probability that the wakeup is worth it. wakegate never picks a sleep duration. Re-arm your timer with your own interval.
 
+What leaves your machine: `waitingFor`, `event` and `observation`, sent to Jev through the Vercel AI Gateway (or to whichever `model` you pass). Nothing else is sent.
+
 ## In a Durable Object alarm
 
 Secrets arrive on `env`, so pass the key through a gateway instance:
