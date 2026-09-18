@@ -1,0 +1,33 @@
+{
+  "name": "wakegate",
+  "version": "0.1.0",
+  "description": "Ask Jev whether a sleeping agent's wakeup is worth a full LLM turn before you resume it.",
+  "keywords": ["jev", "typesafe", "ai-agents", "long-running-agents", "cloudflare-durable-objects", "ai-sdk"],
+  "license": "MIT",
+  "repository": "github:shitianfang/wakegate",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepare": "npm run build",
+    "test": "vitest run",
+    "typecheck": "tsc && tsc -p tsconfig.build.json --noEmit",
+    "eval": "tsx eval/run.ts"
+  },
+  "peerDependencies": {
+    "ai": "^7.0.105"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.0",
+    "ai": "^7.0.106",
+    "tsx": "^4.23.13",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.11"
+  }
+}
